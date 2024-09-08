@@ -3,6 +3,7 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
+  z-index: 1;
 }
 
 :root {
@@ -30,15 +31,22 @@ body {
 }
 
 #component-wrapper {
+  position: relative;
   width: 100vw;
   min-height: 100vh;
   background-color: var(--gray100);
   padding: 71px 24px;
+  overflow: hidden;
 }
 
-#plan-card-wrapper {
-  width: 100%;
-  gap: 33px;
+img {
+  position: absolute;
+  z-index: 0;
+}
+
+#bg-top {
+  top: -35px;
+  right: -196px;
 }
 
 h2 {
@@ -62,7 +70,7 @@ label {
   width: 56px;
 }
 
-#pricing-slider {
+input[type="checkbox"] {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -70,7 +78,7 @@ label {
   opacity: 0;
 }
 
-#pricing-slider:checked + #custom-pricing-slider:before {
+input[type="checkbox"]:checked + #custom-pricing-slider:before {
   transform: translateX(100%);
 }
 
@@ -97,6 +105,10 @@ label {
   transition: var(--transition-duration);
 }
 
+#plan-card-wrapper {
+  width: 100%;
+  gap: 33px;
+}
 .plan-card {
   border-radius: 10px;
   background-color: white;
@@ -123,10 +135,15 @@ label {
   line-height: 0.8;
 }
 
+.plan-feature-list {
+  width: 100%;
+}
+
 .plan-feature {
   border-top: 1px solid var(--gray300);
   padding: 21px;
   font-size: 15px;
+  text-align: center;
 }
 
 .plan-feature:last-child {
@@ -156,4 +173,8 @@ label {
 .plan-card#professional .cta {
   color: var(--blue300);
   background: white;
+}
+
+#bg-bottom {
+  visibility: hidden;
 }
