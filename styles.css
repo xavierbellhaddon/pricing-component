@@ -13,6 +13,7 @@
   --blue100: #a3a8f0;
   --blue300: #696fdd;
   --gradient: linear-gradient(var(--blue100), var(--blue300));
+  --transition-duration: 0.25s;
 }
 
 body {
@@ -92,8 +93,8 @@ label {
   margin: 4px;
   border-radius: 34px;
   background-color: white;
-  -webkit-transition: 0.25s;
-  transition: 0.25s;
+  -webkit-transition: var(--transition-duration);
+  transition: var(--transition-duration);
 }
 
 .plan-card {
