@@ -171,7 +171,6 @@ input[type="checkbox"]:checked + #custom-pricing-slider:before {
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 1.39px;
-  padding: 17px;
   transition: all var(--transition-duration);
 }
 
