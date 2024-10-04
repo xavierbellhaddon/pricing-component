@@ -1,6 +1,8 @@
 * {
   margin: 0;
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   z-index: 1;
@@ -24,7 +26,8 @@ body {
 
 #component-wrapper,
 #plan-card-wrapper,
-.plan-card {
+.plan-card,
+.plan-card-inner-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -110,11 +113,20 @@ input[type="checkbox"]:checked + #custom-pricing-slider:before {
   gap: 33px;
 }
 .plan-card {
+  height: 453px;
   border-radius: 10px;
   background-color: white;
+  width: 327px;
+  padding: 31px 29px;
+  justify-content: center;
+}
+
+.plan-card-inner-wrapper {
+  height: 100%;
+  max-height: 391px;
+  max-width: 350px;
   width: 100%;
-  padding: 29px;
-  gap: 32px;
+  justify-content: space-between;
 }
 
 .plan-name {
@@ -152,12 +164,15 @@ input[type="checkbox"]:checked + #custom-pricing-slider:before {
 
 .cta {
   width: 100%;
+  height: 44px;
   border: none;
+  box-shadow: 0 0 0 2px transparent inset;
   border-radius: 6px;
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 1.39px;
   padding: 17px;
+  transition: all var(--transition-duration);
 }
 
 .plan-card#professional,
@@ -177,4 +192,44 @@ input[type="checkbox"]:checked + #custom-pricing-slider:before {
 
 #bg-bottom {
   visibility: hidden;
+}
+
+/* Hover states */
+
+.cta:hover {
+  color: var(--blue300);
+  box-shadow: 0 0 0 2px var(--blue300) inset;
+  background: white;
+}
+
+.plan-card#professional .cta:hover {
+  color: white;
+  box-shadow: 0 0 0 2px white inset;
+  background: transparent;
+}
+
+/* Responsive styles */
+
+@media (min-width: 1060px) {
+  #plan-card-wrapper {
+    flex-direction: row;
+    justify-content: center;
+    gap: unset;
+  }
+
+  .plan-card {
+    max-width: 350px;
+  }
+
+  .plan-card:first-child {
+    border-radius: 10px 0 0 10px;
+  }
+
+  .plan-card#professional {
+    height: 501px;
+  }
+
+  .plan-card:last-child {
+    border-radius: 0 10px 10px 0;
+  }
 }
