@@ -210,6 +210,17 @@ input[type="checkbox"]:checked + #custom-pricing-slider:before {
 /* Responsive styles */
 
 @media (min-width: 1060px) {
+  #bg-top {
+    top: -35px;
+    right: 0;
+  }
+
+  #bg-bottom {
+    visibility: visible;
+    bottom: 0;
+    left: 0;
+  }
+
   #plan-card-wrapper {
     flex-direction: row;
     justify-content: center;
